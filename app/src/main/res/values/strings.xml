@@ -15,4 +15,9 @@
     <string name="card2_btn_text">Select Bank Account</string>
     <string name="card3_btn_text">Tap for KYC</string>
     <string name="card3_title_text">where should we send the money?</string>
+    <string name="card1_amount_label">credit amount</string>
+    <string name="card1_amount_value_text">$ 1,50,000</string>
+    <string name="card3_subtitle_text">amount will be credited to this bank account, EMI will also be debited from this bank account</string>
+    <string name="bank_title_text">Paytm Payments Bank</string>
+    <string name="bank_ac_text">919999988888</string>
 </resources>
