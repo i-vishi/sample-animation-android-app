@@ -20,4 +20,7 @@
     <string name="card3_subtitle_text">amount will be credited to this bank account, EMI will also be debited from this bank account</string>
     <string name="bank_title_text">Paytm Payments Bank</string>
     <string name="bank_ac_text">919999988888</string>
+    <string name="image_button_desc">Image Button</string>
+    <string name="card1_subtitle_text">move the diial and set any amount you need upto $ 9,99,999</string>
+    <string name="card2_subtitle_text">choose one of our recommended plans or make your own</string>
 </resources>
