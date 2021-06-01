@@ -13,4 +13,6 @@
     <string name="card1_btn_text">Proceed to EMI</string>
     <string name="card2_title_text">how do you wish to repay?</string>
     <string name="card2_btn_text">Select Bank Account</string>
+    <string name="card3_btn_text">Tap for KYC</string>
+    <string name="card3_title_text">where should we send the money?</string>
 </resources>

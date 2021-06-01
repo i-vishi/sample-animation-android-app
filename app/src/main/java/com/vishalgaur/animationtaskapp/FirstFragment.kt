@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.TranslateAnimation
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.vishalgaur.animationtaskapp.databinding.FragmentFirstBinding
 
@@ -33,17 +34,53 @@ class FirstFragment : Fragment() {
 
 	}
 
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+
+		// handle back press
+		activity?.onBackPressedDispatcher?.addCallback(
+			this,
+			object : OnBackPressedCallback(true) {
+				override fun handleOnBackPressed() {
+					when (currState) {
+						2 -> {
+							slideDownAnimation(binding.card2)
+							binding.card1Btn.text = getString(R.string.card1_btn_text)
+							currState = 1
+						}
+						3 -> {
+							slideDownAnimation(binding.card3)
+							binding.card1Btn.text = getString(R.string.card2_btn_text)
+							currState = 2
+						}
+						else -> {
+							this.remove()
+							activity?.onBackPressed()
+						}
+					}
+				}
+			})
+	}
 	private fun setViews() {
 		binding.card2.visibility = View.INVISIBLE
+		binding.card3.visibility = View.INVISIBLE
 		binding.card1Btn.text = getString(R.string.card1_btn_text)
 		binding.card1Btn.setOnClickListener {
 			currState = when (currState) {
 				1 -> {
 					slideUpAnimation(binding.card2)
+					binding.card1Btn.text = getString(R.string.card2_btn_text)
 					2
 				}
+				2 -> {
+					slideUpAnimation(binding.card3)
+					binding.card1Btn.text = getString(R.string.card3_btn_text)
+					3
+				}
 				else -> {
+					slideDownAnimation(binding.card3)
 					slideDownAnimation(binding.card2)
+					binding.card1Btn.text = getString(R.string.card1_btn_text)
 					1
 				}
 			}
