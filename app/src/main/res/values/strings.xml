@@ -23,4 +23,8 @@
     <string name="image_button_desc">Image Button</string>
     <string name="card1_subtitle_text">move the diial and set any amount you need upto $ 9,99,999</string>
     <string name="card2_subtitle_text">choose one of our recommended plans or make your own</string>
+    <string name="card2_emi_label">EMI</string>
+    <string name="card2_emi_value_text">$ 1234 / mo</string>
+    <string name="card2_duration_label">duration</string>
+    <string name="card2_duration_value_text">12 months</string>
 </resources>

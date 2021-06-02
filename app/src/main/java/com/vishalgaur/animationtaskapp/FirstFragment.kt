@@ -47,13 +47,17 @@ class FirstFragment : Fragment() {
 					when (currState) {
 						2 -> {
 							slideDownAnimation(binding.card2)
-							contentHideAnimation(binding.card1SummaryGroup, 0)
-							contentShowAnimation(binding.card1ContentGroup, 800)
+							contentHideAnimation(binding.card2ContentGroup, 0)
+							contentHideAnimation(binding.card1SummaryGroup, 50)
+							contentShowAnimation(binding.card1ContentGroup, 500)
 							binding.card1Btn.text = getString(R.string.card1_btn_text)
 							currState = 1
 						}
 						3 -> {
 							slideDownAnimation(binding.card3)
+							contentHideAnimation(binding.card3ContentGroup, 0)
+							contentHideAnimation(binding.card2SummaryGroup, 50)
+							contentShowAnimation(binding.card2ContentGroup, 500)
 							binding.card1Btn.text = getString(R.string.card2_btn_text)
 							currState = 2
 						}
@@ -71,26 +75,32 @@ class FirstFragment : Fragment() {
 		binding.card3.visibility = View.INVISIBLE
 		contentShowAnimation(binding.card1ContentGroup, 0)
 		binding.card1SummaryGroup.visibility = View.INVISIBLE
+		binding.card2SummaryGroup.visibility = View.INVISIBLE
 		binding.card1Btn.text = getString(R.string.card1_btn_text)
 		binding.card1Btn.setOnClickListener {
 			currState = when (currState) {
 				1 -> {
 					slideUpAnimation(binding.card2)
 					contentHideAnimation(binding.card1ContentGroup, 0)
-					contentShowAnimation(binding.card1SummaryGroup, 800)
+					contentShowAnimation(binding.card1SummaryGroup, 500)
+					contentShowAnimation(binding.card2ContentGroup, 500)
 					binding.card1Btn.text = getString(R.string.card2_btn_text)
 					2
 				}
 				2 -> {
 					slideUpAnimation(binding.card3)
+					contentHideAnimation(binding.card2ContentGroup, 0)
+					contentShowAnimation(binding.card2SummaryGroup, 500)
+					contentShowAnimation(binding.card3ContentGroup, 500)
 					binding.card1Btn.text = getString(R.string.card3_btn_text)
 					3
 				}
 				else -> {
-					slideDownAnimation(binding.card3)
-					slideDownAnimation(binding.card2)
-					binding.card1Btn.text = getString(R.string.card1_btn_text)
-					1
+//					slideDownAnimation(binding.card3)
+//					slideDownAnimation(binding.card2)
+//					binding.card1Btn.text = getString(R.string.card1_btn_text)
+//					1
+					currState
 				}
 			}
 		}
